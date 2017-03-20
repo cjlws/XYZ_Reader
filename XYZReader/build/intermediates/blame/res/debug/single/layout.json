@@ -28,12 +28,12 @@
         "source": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/layout/abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
-        "source": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/layout/abc_list_menu_item_checkbox.xml"
-    },
-    {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/activity_article_detail.xml",
         "source": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/res/layout/activity_article_detail.xml"
+    },
+    {
+        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/layout/abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
