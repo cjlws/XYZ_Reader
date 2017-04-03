@@ -2,5 +2,17 @@
     {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable-v21/white_selectable_item_background_circle.xml",
         "source": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/res/drawable-v21/white_selectable_item_background_circle.xml"
+    },
+    {
+        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
     }
 ]

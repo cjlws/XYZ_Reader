@@ -31,12 +31,19 @@ ADDED from /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5
 		ADDED from /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/AndroidManifest.xml:9:22-76
 application
 ADDED from /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/AndroidManifest.xml:11:5-46:19
-MERGED from [com.android.support:support-v13:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/support-v13/22.0.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:palette-v7:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/palette-v7/22.0.0/AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:recyclerview-v7:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:cardview-v7:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v13:24.2.1] /Users/johnrobinson/.android/build-cache/b71ded298a335d640c122d1fcf4a1d2543d37988/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:palette-v7:24.2.1] /Users/johnrobinson/.android/build-cache/f703adc1c2b15ee3c7b44d6faf12d1f831152187/output/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:cardview-v7:24.2.1] /Users/johnrobinson/.android/build-cache/bca8e3167b50b9d9a7f115194c39cded22633a0b/output/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:24.2.1] /Users/johnrobinson/.android/build-cache/2537b2edda69f7365ae01323b8a0df41261b3b15/output/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:24.2.1] /Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.2.1] /Users/johnrobinson/.android/build-cache/bd112ce1f0584fe2f2666d7b414bfdb8f048949d/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.1] /Users/johnrobinson/.android/build-cache/39977d1b3e58821581fb2790eba8378c0bdb18cd/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.1] /Users/johnrobinson/.android/build-cache/2e217d159e41509205725e5c9ab080f6d741ebaf/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.1] /Users/johnrobinson/.android/build-cache/6eadff94aba928a36e245467e919d7a0331cae9f/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] /Users/johnrobinson/.android/build-cache/c2b1805ad066345572b165371af9924048c4b8ec/output/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.1] /Users/johnrobinson/.android/build-cache/ad54fc915fac61cb3b3c77fe777e071ea8f72e65/output/AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-core-ui:24.2.1] /Users/johnrobinson/.android/build-cache/65372065e98eecdc1364bcd356a880b5c5fabcc4/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.1] /Users/johnrobinson/.android/build-cache/2c215d61d9df6632f41108d07e57fe2ad24aa565/output/AndroidManifest.xml:25:5-20
 	android:label
 		ADDED from /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/AndroidManifest.xml:14:9-41
 	android:allowBackup
@@ -103,21 +110,25 @@ ADDED from /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5
 		ADDED from /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/AndroidManifest.xml:42:19-53
 uses-sdk
 INJECTED from /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:support-v13:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/support-v13/22.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:palette-v7:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/palette-v7/22.0.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:cardview-v7:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.0.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v13:24.2.1] /Users/johnrobinson/.android/build-cache/b71ded298a335d640c122d1fcf4a1d2543d37988/output/AndroidManifest.xml:21:5-23:55
+MERGED from [com.android.support:palette-v7:24.2.1] /Users/johnrobinson/.android/build-cache/f703adc1c2b15ee3c7b44d6faf12d1f831152187/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:24.2.1] /Users/johnrobinson/.android/build-cache/bca8e3167b50b9d9a7f115194c39cded22633a0b/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:24.2.1] /Users/johnrobinson/.android/build-cache/2537b2edda69f7365ae01323b8a0df41261b3b15/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:24.2.1] /Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:24.2.1] /Users/johnrobinson/.android/build-cache/bd112ce1f0584fe2f2666d7b414bfdb8f048949d/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:24.2.1] /Users/johnrobinson/.android/build-cache/39977d1b3e58821581fb2790eba8378c0bdb18cd/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:24.2.1] /Users/johnrobinson/.android/build-cache/2e217d159e41509205725e5c9ab080f6d741ebaf/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:24.2.1] /Users/johnrobinson/.android/build-cache/6eadff94aba928a36e245467e919d7a0331cae9f/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] /Users/johnrobinson/.android/build-cache/c2b1805ad066345572b165371af9924048c4b8ec/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.2.1] /Users/johnrobinson/.android/build-cache/ad54fc915fac61cb3b3c77fe777e071ea8f72e65/output/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:recyclerview-v7:24.2.1] /Users/johnrobinson/.android/build-cache/e752bf272269a1ae5a8c7ae417f1d022ca31bb8a/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-core-ui:24.2.1] /Users/johnrobinson/.android/build-cache/65372065e98eecdc1364bcd356a880b5c5fabcc4/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:24.2.1] /Users/johnrobinson/.android/build-cache/2c215d61d9df6632f41108d07e57fe2ad24aa565/output/AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v13:24.2.1] /Users/johnrobinson/.android/build-cache/b71ded298a335d640c122d1fcf4a1d2543d37988/output/AndroidManifest.xml:23:9-52
 	android:targetSdkVersion
 		INJECTED from /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/AndroidManifest.xml
 		INJECTED from /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/AndroidManifest.xml
 		INJECTED from /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/AndroidManifest.xml
-activity#android.support.v7.widget.TestActivity
-ADDED from [com.android.support:recyclerview-v7:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/AndroidManifest.xml:23:9-25:56
-	android:label
-		ADDED from [com.android.support:recyclerview-v7:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/AndroidManifest.xml:25:13-53
-	android:name
-		ADDED from [com.android.support:recyclerview-v7:22.0.0] /Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/AndroidManifest.xml:24:13-66
