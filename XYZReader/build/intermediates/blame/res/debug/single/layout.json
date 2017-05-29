@@ -48,12 +48,12 @@
         "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/layout/abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
-        "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/layout/abc_action_menu_layout.xml"
-    },
-    {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
         "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/layout/notification_template_lines.xml"
+    },
+    {
+        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
+        "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/layout/abc_action_menu_layout.xml"
     },
     {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/design_menu_item_action_area.xml",
@@ -74,10 +74,6 @@
     {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
         "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/layout/notification_media_action.xml"
-    },
-    {
-        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/abc_simple_dropdown_hint.xml",
-        "source": "/Users/johnrobinson/.android/build-cache/613e7ee1a2447b22aace08861dc817bcfc65d988/output/res/layout/abc_simple_dropdown_hint.xml"
     },
     {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
@@ -172,16 +168,16 @@
         "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/layout/abc_screen_simple.xml"
     },
     {
-        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
-        "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/layout/abc_action_mode_close_item_material.xml"
+        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
+        "source": "/Users/johnrobinson/.android/build-cache/2537b2edda69f7365ae01323b8a0df41261b3b15/output/res/layout/design_layout_tab_text.xml"
     },
     {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
         "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/layout/abc_action_bar_title_item.xml"
     },
     {
-        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
-        "source": "/Users/johnrobinson/.android/build-cache/2537b2edda69f7365ae01323b8a0df41261b3b15/output/res/layout/design_layout_tab_text.xml"
+        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
+        "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/layout/abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",

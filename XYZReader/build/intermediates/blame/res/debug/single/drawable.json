@@ -20,10 +20,6 @@
         "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/drawable/abc_edit_text_material.xml"
     },
     {
-        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable/add_fab_background.xml",
-        "source": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/res/drawable/add_fab_background.xml"
-    },
-    {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable/photo_background_protection.xml",
         "source": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/res/drawable/photo_background_protection.xml"
     },
@@ -32,12 +28,12 @@
         "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/drawable/abc_text_cursor_material.xml"
     },
     {
-        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml",
-        "source": "/Users/johnrobinson/.android/build-cache/2537b2edda69f7365ae01323b8a0df41261b3b15/output/res/drawable/navigation_empty_icon.xml"
+        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable/add_fab_background.xml",
+        "source": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/res/drawable/add_fab_background.xml"
     },
     {
-        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable/abc_ratingbar_full_material.xml",
-        "source": "/Users/johnrobinson/.android/build-cache/613e7ee1a2447b22aace08861dc817bcfc65d988/output/res/drawable/abc_ratingbar_full_material.xml"
+        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml",
+        "source": "/Users/johnrobinson/.android/build-cache/2537b2edda69f7365ae01323b8a0df41261b3b15/output/res/drawable/navigation_empty_icon.xml"
     },
     {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
@@ -80,16 +76,16 @@
         "source": "/Users/johnrobinson/.android/build-cache/2537b2edda69f7365ae01323b8a0df41261b3b15/output/res/drawable/design_ic_visibility.xml"
     },
     {
-        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
-        "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/drawable/abc_btn_radio_material.xml"
-    },
-    {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
         "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/drawable/abc_cab_background_top_material.xml"
     },
     {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
         "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/drawable/abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
+        "source": "/Users/johnrobinson/.android/build-cache/a69752b9212f777e8f6e90c2014dddacb9fa3313/output/res/drawable/abc_btn_radio_material.xml"
     },
     {
         "merged": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml",
