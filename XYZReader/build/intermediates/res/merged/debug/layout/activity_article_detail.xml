@@ -1,5 +1,7 @@
-<FrameLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/Theme.Bacon.Detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
@@ -9,6 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start|bottom"/>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/parent_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        >
+
+    </android.support.v7.widget.Toolbar>
+    <!-- TODO Add toolbar arrow theme -->
+
+
 
     <!--<FrameLayout-->
         <!--android:id="@+id/up_container"-->
@@ -25,4 +38,4 @@
             <!--android:contentDescription="@string/up"-->
             <!--android:src="@drawable/ic_arrow_back" />-->
     <!--</FrameLayout>-->
-</FrameLayout>
+</RelativeLayout>

@@ -12,6 +12,8 @@ import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,15 +31,20 @@ public class ArticleDetailActivity extends AppCompatActivity
 
     private Cursor mCursor;
     private long mStartId;
-
-//    private long mSelectedItemId;
-//    private int mSelectedItemUpButtonFloor = Integer.MAX_VALUE;
-//    private int mTopInset;
+    private long mSelectedItemId;
+    private int mSelectedItemUpButtonFloor = Integer.MAX_VALUE;
+    private int mTopInset;
 
     private ViewPager mPager;
     private MyPagerAdapter mPagerAdapter;
-//    private View mUpButtonContainer;
-//    private View mUpButton;
+    private View mUpButtonContainer;
+    private View mUpButton;
+
+    private Toolbar toolbar;
+
+    private static final String TAG = "ArticleDetailActivity";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +59,18 @@ public class ArticleDetailActivity extends AppCompatActivity
 
 
         setContentView(R.layout.activity_article_detail);
+//        setStatusBarTranslucent(true); //TODO Cover up
+        toolbar = (Toolbar)findViewById(R.id.parent_toolbar); //TODO check reference
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null){
+            Log.d(TAG, "Support Action Bar Was Found");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        } else {
+            Log.d(TAG, "Support Action Bar Was NOT Found");
+        }
+        //TODO Check if toolbar title needs to be set
 
         getLoaderManager().initLoader(0, null, this);
 
@@ -59,26 +78,25 @@ public class ArticleDetailActivity extends AppCompatActivity
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mPagerAdapter);
 
-
-//        mPager.setPageMargin((int) TypedValue
-//                .applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1, getResources().getDisplayMetrics()));
-//        mPager.setPageMarginDrawable(new ColorDrawable(0x22000000));
+        mPager.setPageMargin((int) TypedValue
+                .applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1, getResources().getDisplayMetrics()));
+        mPager.setPageMarginDrawable(new ColorDrawable(0x22000000));
 
         mPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-//            @Override
-//            public void onPageScrollStateChanged(int state) {
-//                super.onPageScrollStateChanged(state);
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                super.onPageScrollStateChanged(state);
 //                mUpButton.animate()
 //                        .alpha((state == ViewPager.SCROLL_STATE_IDLE) ? 1f : 0f)
 //                        .setDuration(300);
-//            }
+            }
 
             @Override
             public void onPageSelected(int position) {
                 if (mCursor != null) {
                     mCursor.moveToPosition(position);
                 }
-//                mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
+                mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
 //                updateUpButtonPosition();
             }
         });
@@ -111,7 +129,7 @@ public class ArticleDetailActivity extends AppCompatActivity
         if (savedInstanceState == null) {
             if (getIntent() != null && getIntent().getData() != null) {
                 mStartId = ItemsContract.Items.getItemId(getIntent().getData());
-//                mSelectedItemId = mStartId;
+                mSelectedItemId = mStartId;
             }
         }
     }
@@ -165,15 +183,15 @@ public class ArticleDetailActivity extends AppCompatActivity
             super(fm);
         }
 
-//        @Override
-//        public void setPrimaryItem(ViewGroup container, int position, Object object) {
-//            super.setPrimaryItem(container, position, object);
+        @Override
+        public void setPrimaryItem(ViewGroup container, int position, Object object) {
+            super.setPrimaryItem(container, position, object);
 //            ArticleDetailFragment fragment = (ArticleDetailFragment) object;
 //            if (fragment != null) {
 //                mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
 //                updateUpButtonPosition();
 //            }
-//        }
+        }
 
         @Override
         public Fragment getItem(int position) {
@@ -187,5 +205,4 @@ public class ArticleDetailActivity extends AppCompatActivity
         }
     }
 
-    //TODO https://github.com/Safadurimo/udacity-xyz-reader/blob/master/XYZReader/src/main/java/com/example/xyzreader/ui/ArticleDetailFragment.java
 }

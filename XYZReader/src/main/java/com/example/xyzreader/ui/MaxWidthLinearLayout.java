@@ -24,6 +24,8 @@ import android.widget.LinearLayout;
 /**
  * A simple {@link LinearLayout} subclass that has a maxWidth
  */
+
+//TODO Determine if class is still used
 public class MaxWidthLinearLayout extends LinearLayout {
     private static final int[] ATTRS = {
             android.R.attr.maxWidth
