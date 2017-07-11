@@ -1744,9 +1744,72 @@
                     "startLine": 253,
                     "startColumn": 4,
                     "startOffset": 18450,
-                    "endLine": 255,
+                    "endLine": 257,
                     "endColumn": 12,
-                    "endOffset": 18639
+                    "endOffset": 18756
+                },
+                "from": {
+                    "file": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/res/values-v21/styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 6,
+                        "endColumn": 12,
+                        "endOffset": 361
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 258,
+                    "startColumn": 4,
+                    "startOffset": 18761,
+                    "endLine": 261,
+                    "endColumn": 12,
+                    "endOffset": 18979
+                },
+                "from": {
+                    "file": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/res/values-v21/styles.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 367,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 262,
+                    "startColumn": 4,
+                    "startOffset": 18984,
+                    "endLine": 264,
+                    "endColumn": 12,
+                    "endOffset": 19118
+                },
+                "from": {
+                    "file": "/Users/johnrobinson/AndroidStudioProjects/XYZ_Reader_Udacity_Project5/XYZReader/src/main/res/values-v21/styles.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 591,
+                        "endLine": 15,
+                        "endColumn": 12,
+                        "endOffset": 725
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 265,
+                    "startColumn": 4,
+                    "startOffset": 19123,
+                    "endLine": 267,
+                    "endColumn": 12,
+                    "endOffset": 19312
                 },
                 "from": {
                     "file": "/Users/johnrobinson/.android/build-cache/2537b2edda69f7365ae01323b8a0df41261b3b15/output/res/values-v21/values-v21.xml",

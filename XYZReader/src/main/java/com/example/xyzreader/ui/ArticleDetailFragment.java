@@ -7,14 +7,13 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.Rect;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ShareCompat;
+import android.support.v4.content.res.ResourcesCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
@@ -42,28 +41,18 @@ import com.example.xyzreader.data.ArticleLoader;
  */
 public class ArticleDetailFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
-    private static final String TAG = "ArticleDetailFragment";
-
     public static final String ARG_ITEM_ID = "item_id";
-    private static final float PARALLAX_FACTOR = 1.25f;
+    private static final String TAG = "ArticleDetailFragment";
     private Cursor mCursor;
     private long mItemId;
     private View mRootView;
-    private int mMutedColor;
-    private int mDarkMutedColor;
+    private View.OnClickListener fabButtonListener;
     private TextView bodyView;
-    private Toolbar toolbar;
-//    private ObservableScrollView mScrollView;
-    private DrawInsetsFrameLayout mDrawInsetsFrameLayout;
-//    private ColorDrawable mStatusBarColorDrawable;
-    private int mTopInset;
-//    private View mPhotoContainerView;
     private ImageView mPhotoView;
-//    private int mScrollY;
-    private boolean mIsCard = false;
-//    private int mStatusBarFullOpacityBottom;
     private CollapsingToolbarLayout mCollapsingToolbarLayout;
 
+    private int default_toolbar_color;
+    private int default_byline_color;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -81,23 +70,27 @@ public class ArticleDetailFragment extends Fragment implements LoaderManager.Loa
         return fragment;
     }
 
+    @SuppressWarnings("deprecation")
+    public static Spanned fromHtml(String html) {
+        Spanned result;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            result = Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            result = Html.fromHtml(html);
+        }
+        return result;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         if (getArguments().containsKey(ARG_ITEM_ID)) {
             mItemId = getArguments().getLong(ARG_ITEM_ID);
         }
 
-        mIsCard = getResources().getBoolean(R.bool.detail_is_card); //TODO
-//        mStatusBarFullOpacityBottom = getResources().getDimensionPixelSize(
-//                R.dimen.detail_card_top_margin);
         setHasOptionsMenu(true);
-    }
-
-    public ArticleDetailActivity getActivityCast() {
-        return (ArticleDetailActivity) getActivity();
     }
 
     @Override
@@ -114,119 +107,72 @@ public class ArticleDetailFragment extends Fragment implements LoaderManager.Loa
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        Log.d(TAG, "FRAGMENT - ON CREATE VIEW");
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
-        mDrawInsetsFrameLayout = (DrawInsetsFrameLayout)mRootView.findViewById(R.id.draw_inserts_frame_layout);
-        mDrawInsetsFrameLayout.setOnInsetsCallback(new DrawInsetsFrameLayout.OnInsetsCallback() {
-            @Override
-            public void onInsetsChanged(Rect insets) {
-                mTopInset = insets.top;
-            }
-        });
-
-//        mScrollView = (ObservableScrollView) mRootView.findViewById(R.id.scrollview);
-//        mScrollView.setCallbacks(new ObservableScrollView.Callbacks() {
-//            @Override
-//            public void onScrollChanged() {
-//                mScrollY = mScrollView.getScrollY();
-//                getActivityCast().onUpButtonFloorChanged(mItemId, ArticleDetailFragment.this);
-//                mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
-//                updateStatusBar();
-//            }
-//        });
 
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
 
-//        mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
-//        mStatusBarColorDrawable = new ColorDrawable(0);
-
-        mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
+        mCollapsingToolbarLayout = (CollapsingToolbarLayout) mRootView.findViewById(R.id.collapsing_toolbar);
+        fabButtonListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
                         .setType("text/plain")
-                        .setText("Some sample text")
+                        .setText(getResources().getString(R.string.share_text_placeholder))
                         .getIntent(), getString(R.string.action_share)));
             }
-        });  //TODO
-
-//        final Toolbar toolbar = (Toolbar)mRootView.findViewById(R.id.toolbar);
-//        getActivityCast().setSupportActionBar(toolbar);
-//        getActivityCast().getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//
-        mCollapsingToolbarLayout = (CollapsingToolbarLayout)mRootView.findViewById(R.id.collapsin_toolbar);
+        };
 
 
-//        bindViews();
-//        updateStatusBar();
+        mRootView.findViewById(R.id.share_fab).setOnClickListener(fabButtonListener);
 
-//        Toolbar toolbar = (Toolbar)mRootView.findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//
-//        if (getSupportActionBar() != null){
-//            Log.d(TAG, "Support Action Bar Was Found");
-//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        } else {
-//            Log.d(TAG, "Support Action Bar Was NOT Found");
-//        }
+        Toolbar toolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
+
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+
+
+        if (((AppCompatActivity) getActivity()).getSupportActionBar() != null) {
+            Log.d(TAG, "Support Action Bar Was Found");
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
+        } else {
+            Log.d(TAG, "Support Action Bar Was NOT Found");
+        }
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "Back Nav was clicked");
+                getActivity().onBackPressed();
+            }
+        });
 
         return mRootView;
     }
 
-//    private void updateStatusBar() {
-//        int color = 0;
-//        if (mPhotoView != null && mTopInset != 0 && mScrollY > 0) {
-//            float f = progress(mScrollY,
-//                    mStatusBarFullOpacityBottom - mTopInset * 3,
-//                    mStatusBarFullOpacityBottom - mTopInset);
-//            color = Color.argb((int) (255 * f),
-//                    (int) (Color.red(mMutedColor) * 0.9),
-//                    (int) (Color.green(mMutedColor) * 0.9),
-//                    (int) (Color.blue(mMutedColor) * 0.9));
-//        }
-//        mStatusBarColorDrawable.setColor(color);
-//        mDrawInsetsFrameLayout.setInsetBackground(mStatusBarColorDrawable);
-//    }
-
-//    static float progress(float v, float min, float max) {
-//        return constrain((v - min) / (max - min), 0, 1);
-//    }
-
-//    static float constrain(float val, float min, float max) {
-//        if (val < min) {
-//            return min;
-//        } else if (val > max) {
-//            return max;
-//        } else {
-//            return val;
-//        }
-//    }
+    private int generateStatusBarColor(int baseColor) {
+        int red = (int) (Color.red(baseColor) * 0.9);
+        int blue = (int) (Color.blue(baseColor) * 0.9);
+        int green = (int) (Color.green(baseColor) * 0.9);
+        return Color.argb(255, red, green, blue);
+    }
 
     private void bindViews() {
-        Log.d(TAG, "BIND VIEWS RAN");
+        Log.d(TAG, "FRAGMENT - BIND VIEWS");
         if (mRootView == null) {
             return;
         }
 
         TextView bylineView = (TextView) mRootView.findViewById(R.id.article_byline);
-
         bylineView.setMovementMethod(LinkMovementMethod.getInstance());
+
         bodyView = (TextView) mRootView.findViewById(R.id.article_body);
 
-//        bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf"));
-
         if (mCursor != null) {
-            Log.d(TAG, "MCURSOR is NOT NULL");
-//            mRootView.setAlpha(0);
             mRootView.setVisibility(View.VISIBLE);
-//            mRootView.animate().alpha(1);
+
 
             mCollapsingToolbarLayout.setTitle(mCursor.getString(ArticleLoader.Query.TITLE));
-
-
-
-
-//            titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
-
 
             String publishedDate = DateUtils.getRelativeTimeSpanString(
                     mCursor.getLong(ArticleLoader.Query.PUBLISHED_DATE),
@@ -234,36 +180,15 @@ public class ArticleDetailFragment extends Fragment implements LoaderManager.Loa
                     DateUtils.FORMAT_ABBREV_ALL).toString();
             String author = mCursor.getString(ArticleLoader.Query.AUTHOR);
 
-            Log.d(TAG, "Date: " + publishedDate + ", By: " + author);
-//            bylineView.setText(Html.fromHtml(
-//                    DateUtils.getRelativeTimeSpanString(
-//                            mCursor.getLong(ArticleLoader.Query.PUBLISHED_DATE),
-//                            System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
-//                            DateUtils.FORMAT_ABBREV_ALL).toString()
-//                            + " by <font color='#ffffff'>"
-//                            + mCursor.getString(ArticleLoader.Query.AUTHOR)
-//                            + "</font>"));
-            bylineView.setText("Published " + publishedDate + " by " + author);  //TODO Move to strings
-
-
-//            bodyView.setText(fromHtml(mCursor.getString(ArticleLoader.Query.BODY)));
-
+            bylineView.setText(getResources().getString(R.string.byline_formatted, publishedDate, author));
 
             String articleText = mCursor.getString(ArticleLoader.Query.BODY);
-//            Log.d(TAG,articleText);
 
-//            bodyView.setText("Loading Atricle...");
-//            new LoadBodyInBackground().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, articleText);
-
-            AsyncTask<String, Void, Spanned> bodyLoader = new AsyncTask<String,Void,Spanned>() {
+            AsyncTask<String, Void, Spanned> bodyLoader = new AsyncTask<String, Void, Spanned>() {
                 @Override
                 protected Spanned doInBackground(String... params) {
                     Log.d(TAG, "Do in background started");
-//                    Log.d(TAG,params[0]);
                     Spanned test = fromHtml(params[0]);
-//                    Log.d(TAG, fromHtml(Cursor.getString(ArticleLoader.Query.BODY)));
-                    Log.d(TAG, "SPANNED" + test.toString());
-
                     Log.d(TAG, "Do in background ended");
                     return test;
                 }
@@ -271,14 +196,11 @@ public class ArticleDetailFragment extends Fragment implements LoaderManager.Loa
                 @Override
                 protected void onPostExecute(Spanned result) {
                     Log.d(TAG, "ON POST EXECUTE START");
-                    //bodyView.setText(result);
                     Spannable spannable = new SpannableString(result);
                     bodyView.setText(spannable, TextView.BufferType.SPANNABLE);
                     Log.d(TAG, "ON POST EXECUTE END");
-//                    super.onPostExecute(result);
                 }
             }.execute(articleText);
-
 
 
             ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
@@ -287,30 +209,61 @@ public class ArticleDetailFragment extends Fragment implements LoaderManager.Loa
                         public void onResponse(final ImageLoader.ImageContainer imageContainer, boolean b) {
                             Bitmap bitmap = imageContainer.getBitmap();
 
-                            Log.d(TAG, "IMAGELOADER onResponse");
+                            Log.d(TAG, "FRAGMENT - IMAGELOADER onResponse");
 
                             if (bitmap != null) {
-//                                Palette p = Palette.generate(bitmap, 12);
-//                                mMutedColor = p.getDarkMutedColor(0xFF333333);
-//                                mPhotoView.setImageBitmap(imageContainer.getBitmap());
-//                                mRootView.findViewById(R.id.nestedLinearLayout)
-//                                        .setBackgroundColor(mMutedColor);
-//                                updateStatusBar();
                                 mPhotoView.setImageBitmap(imageContainer.getBitmap());
 
                                 Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
                                     @Override
+
                                     public void onGenerated(Palette palette) {
-                                        mMutedColor = palette.getMutedColor(0xFF333333);
-                                        mDarkMutedColor = palette.getDarkMutedColor(0xFF333333);
-                                        mCollapsingToolbarLayout.setContentScrimColor(mMutedColor);
-//                                        mPhotoView.setImageBitmap(imageContainer.getBitmap());
-                                        mRootView.findViewById(R.id.nestedLinearLayout)
-                                        .setBackgroundColor(mDarkMutedColor);
+                                        Log.d(TAG, "FRAGMENT - PALETTE ON GENERATED");
+                                        // Generate New Colours based on the loaded image
+
+                                        // Gather default colours in case the palette operation fails to read suitable colours from the image
+                                        default_byline_color = ResourcesCompat.getColor(getResources(), R.color.drkgray, null);
+                                        default_toolbar_color = ResourcesCompat.getColor(getResources(), R.color.theme_primary, null);
+
+                                        int statusBarColor;
+                                        int toolbarColor;
+                                        int subtitleColor;
+
+                                        // Attempt to generate both vibrant and muted colours
+                                        // If both are available then default to vibrant (as it is happier!)
+                                        int mutedToolbarColor = palette.getMutedColor(default_toolbar_color);
+                                        int vibrantToolbarColor = palette.getVibrantColor(default_toolbar_color);
+
+
+                                        if (vibrantToolbarColor == default_toolbar_color) {
+                                            Log.d(TAG, "No Vibrant Colour Found - Try muted colours");
+                                            if (mutedToolbarColor == default_toolbar_color) {
+                                                Log.d(TAG, "No muted was found either - use defaults");
+                                                statusBarColor = generateStatusBarColor(default_toolbar_color);
+                                                toolbarColor = default_toolbar_color;
+                                                subtitleColor = default_byline_color;
+                                            } else {
+                                                Log.d(TAG, "Muted colour was found - " + String.valueOf(mutedToolbarColor));
+                                                statusBarColor = generateStatusBarColor(palette.getMutedColor(default_toolbar_color));
+                                                toolbarColor = palette.getMutedColor(default_toolbar_color);
+                                                subtitleColor = palette.getDarkMutedColor(default_byline_color);
+                                            }
+                                        } else {
+                                            Log.d(TAG, "Vibrant Colour Was Found - " + String.valueOf(vibrantToolbarColor));
+                                            statusBarColor = generateStatusBarColor(palette.getVibrantColor(default_toolbar_color));
+                                            toolbarColor = palette.getVibrantColor(default_toolbar_color);
+                                            subtitleColor = palette.getDarkVibrantColor(default_byline_color);
+                                        }
+
+                                        // Set the background colour of the collapsing toolbar and then use a darker version to set the status bar
+                                        mCollapsingToolbarLayout.setContentScrimColor(toolbarColor);
+                                        mCollapsingToolbarLayout.setStatusBarScrimColor(statusBarColor);
+
+                                        // Colour the background of the subtitle/byline
+                                        mRootView.findViewById(R.id.nestedLinearLayout).setBackgroundColor(subtitleColor);
                                     }
                                 });
                             }
-
                         }
 
                         @Override
@@ -320,43 +273,10 @@ public class ArticleDetailFragment extends Fragment implements LoaderManager.Loa
                     });
         } else {
             mRootView.setVisibility(View.GONE);
-//            titleView.setText("N/A");
-            bylineView.setText("N/A" );
+            bylineView.setText("N/A");
             bodyView.setText("N/A");
         }
     }
-
-    @SuppressWarnings("deprecation")
-    public static Spanned fromHtml(String html){
-        Spanned result;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
-            result = Html.fromHtml(html,Html.FROM_HTML_MODE_LEGACY);
-        } else {
-            result = Html.fromHtml(html);
-        }
-        return result;
-    }
-
-//    private class LoadBodyInBackground extends AsyncTask<String, Void, Spanned>{
-//
-//
-//        @Override
-//        protected Spanned doInBackground(String... params){
-//            Log.d(TAG, "DO IN BACKGROUND");
-//            //Spanned articleBody = fromHtml(params[0]);
-//
-//        return "heelo";
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Spanned result){
-//            Log.d(TAG,"ON POST EXECUTE");
-//            bodyView.setText(result);
-//            super.onPostExecute(result);
-//        }
-//
-//
-//    }
 
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
@@ -365,6 +285,7 @@ public class ArticleDetailFragment extends Fragment implements LoaderManager.Loa
 
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
+        Log.d(TAG, "ON LOAD FINISHED");
         if (!isAdded()) {
             if (cursor != null) {
                 cursor.close();
@@ -378,7 +299,6 @@ public class ArticleDetailFragment extends Fragment implements LoaderManager.Loa
             mCursor.close();
             mCursor = null;
         }
-
         bindViews();
     }
 
@@ -387,15 +307,4 @@ public class ArticleDetailFragment extends Fragment implements LoaderManager.Loa
         mCursor = null;
         bindViews();
     }
-
-//    public int getUpButtonFloor() {  //TODO Poss Remove
-//        if (mPhotoContainerView == null || mPhotoView.getHeight() == 0) {
-//            return Integer.MAX_VALUE;
-//        }
-//
-//        // account for parallax
-//        return mIsCard
-//                ? (int) mPhotoContainerView.getTranslationY() + mPhotoView.getHeight() - mScrollY
-//                : mPhotoView.getHeight() - mScrollY;
-//    }
 }

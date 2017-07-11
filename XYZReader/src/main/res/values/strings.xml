@@ -9,4 +9,10 @@
 
     <string name="up">Up</string>
 
+    <string name="share_text_placeholder">I found a great article on XYZ Reader and thought you might like it too!</string>
+    <string name="byline_formatted">Published %1$s by %2$s</string>
+    <string name="article_image_content_description">Main article image</string>
+
+    <string name="card_date_and_author_label">%1$s by %2$s</string>
+
 </resources>

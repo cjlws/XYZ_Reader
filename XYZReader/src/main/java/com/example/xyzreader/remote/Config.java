@@ -1,6 +1,8 @@
 package com.example.xyzreader.remote;
 
+import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -19,6 +21,7 @@ public class Config {
         } catch (MalformedURLException ignored) {
             Log.e(TAG, "Issue with internet connection - please check");
             //TODO add user-visible error message
+
         }
 
         BASE_URL = url;

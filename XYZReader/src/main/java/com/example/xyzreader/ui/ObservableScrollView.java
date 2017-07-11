@@ -26,7 +26,6 @@ import android.widget.ScrollView;
  * A custom ScrollView that can accept a scroll listener.
  */
 
-//TODO Determine if class is still required
 public class ObservableScrollView extends ScrollView {
     private Callbacks mCallbacks;
 
