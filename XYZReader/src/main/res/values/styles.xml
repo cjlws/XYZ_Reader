@@ -29,7 +29,7 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
-    <style name="ToolbarStyle" parent="Widget.AppCompat.Toolbar">
+    <style name="ToolbarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
 
     </style>
 

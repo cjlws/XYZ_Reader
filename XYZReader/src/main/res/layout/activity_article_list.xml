@@ -6,15 +6,8 @@
     app:theme="@style/Theme.Bacon">
 
     <android.support.design.widget.AppBarLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
-
-        <RelativeLayout
-            android:id="@+id/toolbar_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/theme_primary">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -24,7 +17,9 @@
                 android:layout_marginLeft="@dimen/list_toolbar_side_margin"
                 android:layout_marginRight="@dimen/list_toolbar_side_margin"
                 app:elevation="@dimen/toolbar_elevation"
-                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+                app:theme="@style/ToolbarStyle"
+                app:layout_scrollFlags="scroll|enterAlways">
+                <!--app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -33,7 +28,6 @@
                     android:src="@drawable/logo" />
 
             </android.support.v7.widget.Toolbar>
-        </RelativeLayout>
 
     </android.support.design.widget.AppBarLayout>
 

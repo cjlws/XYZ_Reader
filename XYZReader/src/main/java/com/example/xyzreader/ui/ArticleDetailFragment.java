@@ -197,6 +197,8 @@ public class ArticleDetailFragment extends Fragment implements LoaderManager.Loa
                 protected void onPostExecute(Spanned result) {
                     Log.d(TAG, "ON POST EXECUTE START");
                     Spannable spannable = new SpannableString(result);
+                    bodyView.setLinksClickable(true);
+                    bodyView.setMovementMethod(LinkMovementMethod.getInstance());
                     bodyView.setText(spannable, TextView.BufferType.SPANNABLE);
                     Log.d(TAG, "ON POST EXECUTE END");
                 }

@@ -104,23 +104,21 @@
                 android:layout_marginRight="@dimen/body_text_horizontal_margins"
                 android:layout_marginTop="@dimen/body_text_vertical_margins"
                 android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-                android:textColorLink="@color/theme_accent" />
+                />
         </com.example.xyzreader.ui.MaxWidthLinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/share_fab"
-        android:layout_width="@dimen/fab_width"
-        android:layout_height="@dimen/fab_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="@dimen/fab_margin"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
         android:contentDescription="@string/action_share"
         android:src="@drawable/ic_share"
-        android:stateListAnimator="@anim/fab_state_list_anim"
-        app:elevation="@dimen/fab_elevation"
-        app:pressedTranslationZ="@dimen/fab_press_translation_z" />
+        />
 
 </android.support.design.widget.CoordinatorLayout>
